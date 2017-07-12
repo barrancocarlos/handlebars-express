@@ -1,0 +1,52 @@
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Jumbotron Header -->
+        <header class="jumbotron hero-spacer">
+            <h1>Projects!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+            <p><a href="add" class="btn btn-primary btn-large">Add New Project</a>
+            </p>
+        </header>
+
+        <hr>
+
+        <!-- Title -->
+        <div class="container tit-bot">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>Latest Projects</h3>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="container">
+        <div class="row text-center">
+          {{#if info}}
+          {{#each info}}
+            <div class="col-md-4 col-sm-12 hero-feature">
+                <div class="thumbnail">
+                       <div class="caption">
+                        <h3>{{name}}</h3>
+                        <p>{{activitie}}</p>
+
+                            <a href="/api/{{this.id }}" class="btn btn-info">EDIT</a>
+
+                            <form action="/api/{{this.id }}?_method=DELETE" method="POST" >
+                                  <button type="submit" class="btn btn-danger">DELETE</button>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+          {{/each}}
+          {{else}}
+          <h3>You have no projects</h3>
+          {{/if}}
+
+
+        </div>
+        </div>
+        <!-- /.row -->
